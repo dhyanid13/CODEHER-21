@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Self Check</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <style>
+        body{
+            padding: 8px;
+    
+             
+            background-color: rgba(0, 255, 0, 0.3);
+        }
+        .card{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width:500px;
+            height: 100%;
+            margin:100px 580px;
+        }
+        container{
+            background-color: aliceblue;
+        }
+        form{
+            background-color: rgb(94, 139, 139);
+            padding:10px;
+            border-radius: 10px;
+            font-size:20px;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Get a Self Covid Checkup</h1>
+   <div class="container" style="padding:40px 15px 0px 15px;">
+      
+      
+      
+        <form class="row" method="POST" action="page" class="card">
+            {% csrf_token %}
+                    <div class="col m6 s12">
+                        <div >
+                        <label for="full_name">Full Name<a class="tooltipped" name="full_name" data-position="right" data-tooltip="I am a tooltip"> (To generate
+                            customised report)</a>
+                            </label>
+                            
+                        <input
+                            type="text"
+                            id="full_name"
+                            name="full_name"
+                            
+                        />
+                        </div>
+                        <div>
+                        <label for="age">Age</label>
+                        <input
+                            type="number"
+                            step="1"
+                            class="form-control"
+                            id="age"
+                            min=1 max=150
+                            name="age" required
+                        />
+                        </div> 
+                        <br> 
+                        <div class="form-control">
+                        <label for="gender">Gender</label>
+                        <select name="gender" class="browser-default" required>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="0">Female</option>
+                            <option value="1">Male</option>
+                        </select>
+                        </div><br>
+                        <div>
+                        <label for="fever">Fever</label>
+                        <input type="number"  name="fever" value="" required>
+                        </div><br>
+                        <div>
+                        <label for="cough">Cough</label>
+                        <select name="cough" required class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        </div><br>
+                        <div>
+                        <label for="tired">Tiredness</label>
+                        <select name="tired" required class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="col m6 s12" >
+                        <strong>What are the other problems?</strong><br>
+                        <div>
+                        <label>
+                            <input id="indeterminate-checkbox breathe" name="breathe"  type="checkbox" />
+                            <span>Difficulty in Breathing</span>
+                        </label>
+                        </div>
+                        <br>
+                        <div>
+                        <label>
+                            <input id="indeterminate-checkbox pains" name="pains"  type="checkbox" />
+                            <span>Body Ache</span>
+                        </label>
+                        </div> <br>
+                        <div>
+                        <label>
+                            <input id="indeterminate-checkbox nasal_congestion" name="nasal_congestion"  type="checkbox" />
+                            <span>Nasal Congestion</span>
+                        </label>
+                        </div> <br>
+                        <div>
+                        <label>
+                            <input id="indeterminate-checkbox runny_nose" name="runny_nose"  type="checkbox" />
+                            <span>Runny Nose</span>
+                        </label>
+                        </div> <br>
+                        <div>
+                        <label>
+                            <input id="indeterminate-checkbox sore_throat" name="sore_throat"  type="checkbox" />
+                            <span>Sore Throat</span>
+                        </label>
+                        </div> <br>
+                        <div>
+                        <label>
+                            <input id="indeterminate-checkbox none" name="none"  type="checkbox" />
+                            <span>None</span>
+                        </label>
+                        </div> <br>
+                        <div>
+                            <label>
+                            <input id="indeterminate-checkbox nopain" name="nopain"  type="checkbox" />
+                            <span>No pains Experiencing</span>
+                            </label>
+                        </div> <br>
+                    </div>
+                    
+                    
+                        <button  class="btn btn-danger btn-block my-4">
+                        <input onclick="location.href='{% url 'model' %}'" type="Submit">
+                    </button>
+                
+        </form>
+      
+    </div>
+    
+</body>
+</html>

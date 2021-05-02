@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Result</title>
+        <style>
+            body{
+                padding:30px;
+            }
+            h3{
+                color:tomato;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Your Probable result is:</h1>
+        <h3>You are : possibly infected</h3>
+        <h3>
+            {% if data %}
+            {{data}}
+            {% endif %}
+        </h3>
+    </body>
+</html>
+
+<!--{% if data %}
+{{data}}
+{% endif %}
+{% if data1 %}
+{{data1}}
+{% endif %} -->
